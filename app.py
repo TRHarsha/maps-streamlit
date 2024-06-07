@@ -13,7 +13,7 @@ from apps.navigator import (get_location_from_address,
 BASEMAPS = ['Satellite', 'Roadmap', 'Terrain', 'Hybrid', 'OpenStreetMap']
 TRAVEL_MODE = ['Drive', 'Walk', 'Bike']
 TRAVEL_OPTIMIZER = ['Length', 'Time']
-ADDRESS_DEFAULT = "Grand Place, Bruxelles"
+ADDRESS_DEFAULT = "Shivamogga, Karnataka, India 577204"
 
 # Functions
 def clear_text():
