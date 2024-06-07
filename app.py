@@ -11,6 +11,9 @@ from apps.navigator import (get_location_from_address,
                             get_graph_from_mode,
                             find_shortest_path)
 
+# Set the page configuration at the very beginning
+st.set_page_config(page_title="🚋 Route finder", layout="wide")
+
 # Retrieve the API key from Streamlit secrets
 api_key = st.secrets["GOOGLE_API_KEY"]
 
@@ -106,8 +109,6 @@ ADDRESS_DEFAULT = "Grand Place, Bruxelles"
 def clear_text():
     st.session_state["go_from"] = ""
     st.session_state["go_to"] = ""
-
-st.set_page_config(page_title="🚋 Route finder", layout="wide")
 
 # ====== SIDEBAR ======
 with st.sidebar:
