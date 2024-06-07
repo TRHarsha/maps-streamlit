@@ -48,8 +48,11 @@ def sidebar():
 
 def main_page(basemap, address_from, address_to):
     lat, lon = get_location_from_address(address=ADDRESS_DEFAULT)
-    m = leafmap.Map(center=(lat, lon), zoom=16)
-    m.add_basemap(basemap)
+    if lat is None or lon is None:
+        st.write(f"Unable to find location for {ADDRESS_DEFAULT}")
+    else:
+        # rest of your code 
+        m.add_basemap(basemap)
     
     if address_from and address_to:
         graph, location_orig, location_dest = get_graph(address_from, address_to)
