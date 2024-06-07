@@ -7,6 +7,7 @@ import time
 import random
 import google.generativeai as genai
 import pyttsx3
+from dotenv import load_dotenv
 
 from apps.navigator import (get_location_from_address,
                             get_graph,
@@ -89,8 +90,11 @@ else:
 m.to_streamlit()
 
 # ====== VEHICLE SIMULATION ======
-# Directly set the API key
-api_key = 'AIzaSyCSblJhwW5i44o0-S_ltouuW4X8C2dSjXU'  # Replace with your actual API key
+# Directly set the API ke
+load_dotenv() ## loading all the environment variables
+
+
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))  # Replace with your actual API key
 
 if not api_key:
     raise ValueError("API key not found. Please set the GOOGLE_API_KEY in the script.")
